@@ -40,6 +40,13 @@
         <uap:SplashScreen Image="Assets\Tile310x150.png" BackgroundColor="#FFFFFF"/>
         <uap:DefaultTile Square71x71Logo="Assets\Tile71x71.png" Square310x310Logo="Assets\Tile310x310.png" Wide310x150Logo="Assets\Tile310x150.png"></uap:DefaultTile>
       </uap:VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="TDC2015.BackgroundTask.TileUpdaterTask">
+          <BackgroundTasks>
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
     </Application>
   </Applications>
 

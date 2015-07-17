@@ -116,6 +116,10 @@
     <Content Include="Assets\Tile310x150.png" />
     <Content Include="Assets\Tile310x310.png" />
     <Content Include="Assets\Tile71x71.png" />
+    <Content Include="Assets\Tile_w10_150x150.png" />
+    <Content Include="Assets\Tile_w10_310x150.png" />
+    <Content Include="Assets\Tile_w10_310x310.png" />
+    <Content Include="Assets\Tile_w10_71x71.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
@@ -154,6 +158,12 @@
       <HintPath>..\packages\System.Numerics.Vectors.4.0.0\lib\win8\System.Numerics.Vectors.WindowsRuntime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TDC2015.BackgroundTask\TDC2015.BackgroundTask.csproj">
+      <Project>{66151b0a-f96d-41f2-9060-8924ae97a621}</Project>
+      <Name>TDC2015.BackgroundTask</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
