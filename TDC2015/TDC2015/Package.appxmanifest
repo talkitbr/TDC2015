@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  IgnorableNamespaces="uap mp">
+
+  <Identity
+    Name="6cec0e45-bd6e-4142-95ac-5d919c6b8b4c"
+    Publisher="CN=eldorado"
+    Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="6cec0e45-bd6e-4142-95ac-5d919c6b8b4c" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>TDC2015</DisplayName>
+    <PublisherDisplayName>eldorado</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10069.0" MaxVersionTested="10.0.10069.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="TDC2015.App">
+      <uap:VisualElements
+        DisplayName="TDC2015"
+        Square150x150Logo="Assets\Tile150x150.png"
+        Square44x44Logo="Assets\Square44x44.png"
+        Description="TDC2015"
+        BackgroundColor="#464646">
+        <uap:SplashScreen Image="Assets\Tile310x150.png" BackgroundColor="#FFFFFF"/>
+        <uap:DefaultTile Square71x71Logo="Assets\Tile71x71.png" Square310x310Logo="Assets\Tile310x310.png" Wide310x150Logo="Assets\Tile310x150.png"></uap:DefaultTile>
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
