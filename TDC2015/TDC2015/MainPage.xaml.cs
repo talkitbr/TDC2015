@@ -45,6 +45,7 @@ namespace TDC2015
         {
             this.StatusLabel.Text = "Setting tile...";            
 
+            // Create tile
             TileManager.CreateTile();
 
             this.StatusLabel.Text = "Tile has been set!";
@@ -54,9 +55,13 @@ namespace TDC2015
         {
             this.StatusLabel.Text = "Registering task...";
 
+            // Register Task
             this.RegisterTask();            
         }
 
+        /// <summary>
+        /// Method reponsible for registering the background task
+        /// </summary>
         private async void RegisterTask()
         {
             var taskRegistered = Windows.ApplicationModel.Background.BackgroundTaskRegistration.AllTasks.Select(task => task.Value.Name == nameof(TileUpdaterTask)).Count() > 0;
@@ -66,6 +71,7 @@ namespace TDC2015
             }
             else
             {
+                // Check if task is registred
                 BackgroundAccessStatus allowed = await BackgroundExecutionManager.RequestAccessAsync();
 
                 if (allowed == BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity || allowed == BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity)

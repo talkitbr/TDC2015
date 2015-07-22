@@ -11,6 +11,7 @@ namespace TDC2015.BackgroundTask
 {
     public sealed class TileUpdaterTask : IBackgroundTask
     {
+        // Tile xml content
         private static string w10TileXml = @"<tile>
                                 <visual>
                                  <binding template=""TileSmall"">
@@ -56,12 +57,14 @@ namespace TDC2015.BackgroundTask
 
         public void Run(IBackgroundTaskInstance taskInstance)
         {
+            // Check the task cost
             var cost = BackgroundWorkCost.CurrentBackgroundWorkCost;
             if (cost == BackgroundWorkCostValue.High)
             {
                 return;
             }
 
+            // Get the cancel token
             var cancel = new System.Threading.CancellationTokenSource();
             taskInstance.Canceled += (s, e) =>
             {
@@ -69,9 +72,11 @@ namespace TDC2015.BackgroundTask
                 cancel.Dispose();
             };
 
+            // Get deferral
             var deferral = taskInstance.GetDeferral();
             try
             {
+                // Update Tile with the new xml
                 XmlDocument xmldoc = new XmlDocument();
                 xmldoc.LoadXml(TileUpdaterTask.w10TileXml);
 

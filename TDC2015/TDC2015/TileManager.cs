@@ -3,10 +3,17 @@ using Windows.UI.Notifications;
 
 namespace TDC2015
 {
+    /// <summary>
+    ///  Tile Manager class
+    /// </summary>
     public class TileManager
     {
+        /// <summary>
+        /// Method responsible for creating and update adaptive tile
+        /// </summary>
         public static void CreateTile()
         { 
+            // Simple tile xml. Only text element in all tile templates
             //string tileXml = @"<tile>
             //                    <visual>
             //                     <binding template=""TileSmall"">
@@ -24,6 +31,7 @@ namespace TDC2015
             //                    </visual>
             //                   </tile>";
 
+            // Complete tile XML.
             string tileXml = @"<tile>
                                 <visual>
                                  <binding template=""TileSmall"">
@@ -66,11 +74,14 @@ namespace TDC2015
                                 </visual>
                                </tile>";
 
+            // Create a XMLDocument with tile xml content
             XmlDocument xmldoc = new XmlDocument();
             xmldoc.LoadXml(tileXml);
 
+            // Create a TileNotification with xml document
             TileNotification tileNotification = new TileNotification(xmldoc);
             TileUpdater tileUpdator = TileUpdateManager.CreateTileUpdaterForApplication();            
+            // Update tile with the new tile layout
             tileUpdator.Update(tileNotification);
         }            
     }

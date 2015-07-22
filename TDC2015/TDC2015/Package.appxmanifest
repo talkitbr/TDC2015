@@ -14,7 +14,7 @@
   <mp:PhoneIdentity PhoneProductId="6cec0e45-bd6e-4142-95ac-5d919c6b8b4c" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>TDC2015</DisplayName>
+    <DisplayName>APP TDC 2015</DisplayName>
     <PublisherDisplayName>eldorado</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
